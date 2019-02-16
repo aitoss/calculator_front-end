@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,36 +15,90 @@
               var x=eval(calc.display.value);
               calc.display.value=Math.pow(x,y);
              }
+             function fun1(y)
+             {
+                  var x=(calc.display.value)
+                  if(x=='0')
+                   calc.display.value=y;
+                  else 
+                  calc.display.value+=y;
+                             
+             }
+             function myfun2()
+             {
+                 var x=eval(calc.display.value);
+                 calc.display.value=Math.log(x);
+             }
+             function myfun3()
+             {
+                 var x=eval(calc.display.value);
+                 calc.display.value=Math.sin(x);
+             }
+            
+             function myfun4()
+             {
+                 var x=eval(calc.display.value);
+                 calc.display.value=Math.cos(x);
+             }
+             function myfun5()
+             {
+                 var x=eval(calc.display.value);
+                 calc.display.value=Math.tan(x);
+             }
+             function myfun6()
+             {
+                  var x=(calc.display.value).length
+                  if(x=='1')
+                   calc.display.value='0';
+                  else 
+                  calc.display.value=calc.display.value.slice(0,-1)
+
+             }
+           function funequal()
+           {
+            try {
+                var x=eval(calc.display.value);
+                  calc.display.value=x;
+                }
+            catch(err) {
+                calc.display.value='MATH ERROR!';
+                       }
+           }
 
         </script>
 
     </head>
 
-    <body>
+    <body style="background-color:#ffcc66">
         <h1>MY CALCI</h1>
         <br/>
         <form id="myform" name="calc">
-           <input id="disp" name="display"><br/> 
-           <input type=button value="1" OnClick="calc.display.value+='1'">
-           <input type=button value="2" OnClick="calc.display.value+='2'">
-           <input type=button value="3" OnClick="calc.display.value+='3'">
-           <input type=button value="+" OnClick="calc.display.value+='+'"><br/>
-           <input type=button value="4" OnClick="calc.display.value+='4'">
-           <input type=button value="5" OnClick="calc.display.value+='5'">
-           <input type=button value="6" OnClick="calc.display.value+='6'">
-           <input type=button value="-" OnClick="calc.display.value+='-'"><br/>
-           <input type=button value="7" OnClick="calc.display.value+='7'">
-           <input type=button value="8" OnClick="calc.display.value+='8'">
-           <input type=button value="9" OnClick="calc.display.value+='9'">
-           <input type=button value="x" OnClick="calc.display.value+='*'"><br/>
-           <input type=button value="C" OnClick="calc.display.value=''">
-           <input type=button value="0" OnClick="calc.display.value+='0'">
-            <input type=button value="=" OnClick="calc.display.value=eval(calc.display.value)">
-           <input type=button value="&#247;" OnClick="calc.display.value+='/'"><br>
-           <input type=button value="Del" OnClick="calc.display.value=calc.display.value.slice(0,-1)">
+           <input id="disp" name="display" value="0"><br/> 
+           <input type=button value="1" OnClick="fun1(1)">
+           <input type=button value="2" OnClick="fun1(2)">
+           <input type=button value="3" OnClick="fun1(3)">
+           <input type=button value="+" OnClick="calc.display.value+='+'">
+           <input type=button value="sin(x)" OnClick="myfun3()"><br>
+           <input type=button value="4" OnClick="fun1(4)">
+           <input type=button value="5" OnClick="fun1(5)">
+           <input type=button value="6" OnClick="fun1(6)">
+           <input type=button value="-" OnClick="calc.display.value+='-'">
+           <input type=button value="cos(x)" OnClick="myfun4()"><br>
+           <input type=button value="7" OnClick="fun1(7)">
+           <input type=button value="8" OnClick="fun1(8)">
+           <input type=button value="9" OnClick="fun1(9)">
+           <input type=button value="x" OnClick="calc.display.value+='*'">
+           <input type=button value="tan(x)" OnClick="myfun5()"><br/>
+           <input type=button value="C" OnClick="calc.display.value='0'">
+           <input type=button value="0" OnClick="fun1(0)">
+            <input type=button value="=" OnClick="funequal()">
+           <input type=button value="&#247;" OnClick="calc.display.value+='/'">
+           <input type=button value="PI" OnClick="fun1(3.1415926)"><br/>
+           <input type=button value="Del" OnClick="myfun6()">
            <input type=button value="." OnClick="calc.display.value+='.'">
            <input type=button value="x²" OnClick="myfun(2)">
            <input type=button value="x³" OnClick="myfun(3)">
+           <input type=button value="ln" OnClick="myfun2()">
         </form>
     </body>
 </html>
